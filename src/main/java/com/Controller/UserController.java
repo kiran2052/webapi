@@ -1,8 +1,8 @@
-package com.example.webapi.Controller;
+package com.Controller;
 
-import com.example.webapi.Models.Message;
-import com.example.webapi.Models.User;
-import com.example.webapi.Services.UserRepository;
+import com.Models.Message;
+import com.Models.User;
+import com.Services.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +15,16 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired Message message;
+    @Autowired
+    Message message;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<User> getUser(){return userRepository.findAll(); }
+    public List<User> getUser()
+    {
+        return userRepository.findAll();
+    }
+    
+
 
 
     @DeleteMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)

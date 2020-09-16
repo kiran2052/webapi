@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mysql-dev:
+    image: library/mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=Kiran2052
+      - MYSQL_DATABASE=dbtest
+      - MYSQL_USER=root
+
+  springboot-docker-container:
+    image: springboot-docker-container
+    ports:
+      - 8082:8080
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-dev

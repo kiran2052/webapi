@@ -1,4 +1,4 @@
-package com.example.webapi.Models;
+package com.Models;
 
 import javax.persistence.*;
 
@@ -11,7 +11,7 @@ public class User {
     private String password;
     private String email;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public Long getId() {
         return id;
